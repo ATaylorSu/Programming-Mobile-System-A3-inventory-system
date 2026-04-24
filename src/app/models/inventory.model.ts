@@ -1,56 +1,84 @@
 /**
  * Inventory Data Models and Type Definitions
- * Student: HaozheSong
+ * Student: HaozheSong (ID: 24832672)
  * Course: PROG2005 Programming Mobile Systems
- * Assessment: A3 Part2a
- * Description: Defines core data models, interfaces and type definitions for the inventory system
+ * Assessment: A3 Part1 - Phase 3a (API Service Layer)
+ * Description: Defines core data models, interfaces and type definitions
+ *              for the inventory system, aligned with REST API requirements
  */
-
-export interface InventoryItem {
-  name: string;
-  price: number;
-  description: string;
-  category: Category;
-  featured: boolean;
-  imageUrl?: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-}
 
 export enum Category {
   ELECTRONICS = 'Electronics',
   FURNITURE = 'Furniture',
   CLOTHING = 'Clothing',
-  BOOKS = 'Books',
-  FOOD = 'Food',
-  OTHER = 'Other'
+  TOOLS = 'Tools',
+  MISCELLANEOUS = 'Miscellaneous'
+}
+
+export enum StockStatus {
+  IN_STOCK = 'In Stock',
+  LOW_STOCK = 'Low Stock',
+  OUT_OF_STOCK = 'Out of Stock'
+}
+
+export interface InventoryItem {
+  itemId?: number;
+  itemName: string;
+  category: Category;
+  quantity: number;
+  price: number;
+  supplierName: string;
+  stockStatus: StockStatus;
+  featuredItem: number;
+  specialNote?: string;
 }
 
 export interface CreateInventoryItem {
-  name: string;
-  price: number;
-  description: string;
+  itemName: string;
   category: string;
-  featured?: boolean;
+  quantity: number;
+  price: number;
+  supplierName: string;
+  stockStatus?: string;
+  featuredItem?: number;
+  specialNote?: string;
 }
 
 export interface UpdateInventoryItem {
-  price?: number;
-  description?: string;
   category?: string;
-  featured?: boolean;
+  quantity?: number;
+  price?: number;
+  supplierName?: string;
+  stockStatus?: string;
+  featuredItem?: number;
+  specialNote?: string;
 }
 
 export interface InventorySearchResult {
-  items: InventoryItem[];
-  total: number;
-  page: number;
-  pageSize: number;
+  item: InventoryItem;
+  found: boolean;
 }
 
 export interface ApiResponse<T> {
   success: boolean;
+  message?: string;
   data?: T;
   error?: string;
-  message?: string;
 }
+
+export const VALID_CATEGORIES = [
+  'Electronics',
+  'Furniture',
+  'Clothing',
+  'Tools',
+  'Miscellaneous'
+] as const;
+
+export const VALID_STOCK_STATUSES = [
+  'In Stock',
+  'Low Stock',
+  'Out of Stock'
+] as const;
+
+export type ValidCategory = typeof VALID_CATEGORIES[number];
+export type ValidStockStatus = typeof VALID_STOCK_STATUSES[number];
