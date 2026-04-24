@@ -1,8 +1,8 @@
 /**
  * Inventory Error Handler
- * Student: HaozheSong
+ * Student: HaozheSong (ID: 24832672)
  * Course: PROG2005 Programming Mobile Systems
- * Assessment: A3 Part2a
+ * Assessment: A3 Part1 - Phase 3a (API Service Layer)
  * Description: Centralized error handling utilities for the inventory system
  */
 
@@ -14,6 +14,7 @@ export class InventoryError extends Error {
   ) {
     super(message);
     this.name = 'InventoryError';
+    Error.captureStackTrace(this, this.constructor);
   }
 }
 
@@ -38,4 +39,8 @@ export function getErrorMessage(errorCode: ErrorCode): string {
     [ErrorCode.UNKNOWN]: 'An unexpected error occurred.'
   };
   return messages[errorCode];
+}
+
+export function isInventoryError(error: any): error is InventoryError {
+  return error instanceof InventoryError;
 }
