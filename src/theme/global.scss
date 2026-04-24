@@ -1,0 +1,272 @@
+/**
+ * Global Styles
+ * Student: JiemingLiu
+ * Course: PROG2005 Programming Mobile Systems
+ * Assessment: A3 Part1 - Phase 6 (Style Optimization)
+ * Description: Shared styles and utilities across the application
+ */
+
+/* Import Variables */
+@import './variables';
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+/* Card Styles */
+ion-card {
+  --background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  margin: var(--space-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+ion-card-header {
+  padding: var(--space-lg) var(--space-lg) var(--space-sm);
+}
+
+ion-card-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+ion-card-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: none;
+}
+
+ion-card-content {
+  padding: var(--space-md) var(--space-lg) var(--space-lg);
+}
+
+/* Button Styles */
+ion-button {
+  --border-radius: var(--radius-lg);
+  font-weight: var(--font-weight-medium);
+  text-transform: none;
+  letter-spacing: 0.3px;
+  transition: all var(--transition-base);
+
+  &[expand="block"] {
+    margin: var(--space-md) 0;
+  }
+}
+
+.btn-gradient {
+  --background: var(--gradient-primary);
+  --box-shadow: var(--shadow-primary);
+}
+
+.btn-success {
+  --background: var(--color-success);
+}
+
+.btn-danger {
+  --background: var(--color-danger);
+}
+
+/* Input Styles */
+ion-item {
+  --background: transparent;
+  --border-color: var(--color-border);
+  --border-radius: var(--radius-lg);
+  --padding-start: var(--space-md);
+  --padding-end: var(--space-md);
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+ion-input, ion-textarea {
+  --background: var(--color-background);
+  --padding-start: var(--space-md);
+  --padding-end: var(--space-md);
+  --padding-top: var(--space-md);
+  --padding-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+
+  &:focus-within {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+  }
+}
+
+ion-label[position="stacked"] {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+/* List Styles */
+ion-list {
+  background: transparent;
+  padding: 0;
+}
+
+ion-list-header {
+  --background: transparent;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Chip/Tag Styles */
+ion-chip {
+  --background: var(--color-background);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+
+  &.chip-success {
+    --background: rgba(16, 185, 129, 0.15);
+    --color: var(--color-success);
+  }
+
+  &.chip-warning {
+    --background: rgba(245, 158, 11, 0.15);
+    --color: var(--color-warning);
+  }
+
+  &.chip-danger {
+    --background: rgba(239, 68, 68, 0.15);
+    --color: var(--color-danger);
+  }
+}
+
+/* Badge Styles */
+ion-badge {
+  --background: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+}
+
+/* Loading/Spinner Styles */
+ion-spinner {
+  --color: var(--color-primary);
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+
+  &-icon {
+    font-size: 64px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  &-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  &-message {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    max-width: 280px;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-muted { color: var(--color-text-muted); }
+.text-success { color: var(--color-success); }
+.text-danger { color: var(--color-danger); }
+.text-warning { color: var(--color-warning); }
+
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-medium { font-weight: var(--font-weight-medium); }
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-slow) ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-slow) ease-out;
+}
