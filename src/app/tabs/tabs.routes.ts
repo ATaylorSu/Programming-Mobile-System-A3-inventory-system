@@ -7,6 +7,7 @@
  */
 
 import { Routes } from '@angular/router';
+import { authGuard } from '../guards/auth.guard';
 
 export const tabsRoutes: Routes = [
   {
@@ -16,18 +17,22 @@ export const tabsRoutes: Routes = [
   },
   {
     path: 'inventory-list',
-    loadComponent: () => import('../inventory-list/inventory-list.page').then(m => m.InventoryListPage)
+    loadComponent: () => import('../inventory-list/inventory-list.page').then(m => m.InventoryListPage),
+    canActivate: [authGuard]
   },
   {
     path: 'add-featured',
-    loadComponent: () => import('../add-featured/add-featured.page').then(m => m.AddFeaturedPage)
+    loadComponent: () => import('../add-featured/add-featured.page').then(m => m.AddFeaturedPage),
+    canActivate: [authGuard]
   },
   {
     path: 'edit-delete',
-    loadComponent: () => import('../edit-delete/edit-delete.page').then(m => m.EditDeletePage)
+    loadComponent: () => import('../edit-delete/edit-delete.page').then(m => m.EditDeletePage),
+    canActivate: [authGuard]
   },
   {
     path: 'privacy-security',
-    loadComponent: () => import('../privacy-security/privacy-security.page').then(m => m.PrivacySecurityPage)
+    loadComponent: () => import('../privacy-security/privacy-security.page').then(m => m.PrivacySecurityPage),
+    canActivate: [authGuard]
   }
 ];

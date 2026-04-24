@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="login-container">
+    <!-- Logo/Brand Section -->
+    <div class="brand-section">
+      <ion-icon name="cube-outline" class="brand-icon"></ion-icon>
+      <h1 class="brand-title">Inventory Manager</h1>
+      <p class="brand-subtitle">Sign in to manage your inventory</p>
+    </div>
+
+    <!-- Login Form -->
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Welcome Back</ion-card-title>
+        <ion-card-subtitle>Enter your credentials</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <!-- Error Message -->
+        <ion-card *ngIf="errorMessage" color="danger" class="error-card">
+          <ion-card-content>
+            <ion-icon name="alert-circle-outline"></ion-icon>
+            {{ errorMessage }}
+          </ion-card-content>
+        </ion-card>
+
+        <form (ngSubmit)="onLogin()">
+          <!-- Username Field -->
+          <ion-item>
+            <ion-label position="stacked">Username</ion-label>
+            <ion-input
+              [(ngModel)]="username"
+              name="username"
+              type="text"
+              placeholder="Enter your username"
+              maxlength="50"
+              autocomplete="username"
+              (ionInput)="clearError()"
+              required>
+            </ion-input>
+          </ion-item>
+
+          <!-- Password Field -->
+          <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input
+              [(ngModel)]="password"
+              name="password"
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="Enter your password"
+              minlength="6"
+              autocomplete="current-password"
+              (ionInput)="clearError()"
+              required>
+            </ion-input>
+            <ion-button
+              slot="end"
+              fill="clear"
+              size="default"
+              type="button"
+              (click)="togglePasswordVisibility()"
+              class="password-toggle">
+              <ion-icon [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </ion-button>
+          </ion-item>
+
+          <ion-note class="password-hint">
+            Password must be at least 6 characters
+          </ion-note>
+
+          <!-- Login Button -->
+          <div class="login-actions">
+            <ion-button
+              expand="block"
+              type="submit"
+              [disabled]="isLoading"
+              class="login-btn">
+              <ion-spinner *ngIf="isLoading" name="crescent"></ion-spinner>
+              <span *ngIf="!isLoading">Sign In</span>
+            </ion-button>
+          </div>
+        </form>
+
+        <!-- Demo Credentials -->
+        <div class="demo-credentials">
+          <ion-note>
+            <strong>Demo Credentials:</strong><br>
+            Username: admin<br>
+            Password: admin123
+          </ion-note>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Footer -->
+    <div class="login-footer">
+      <ion-note>
+        PROG2005 Programming Mobile Systems
+      </ion-note>
+    </div>
+  </div>
+</ion-content>
