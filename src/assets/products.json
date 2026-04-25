@@ -1,0 +1,492 @@
+[
+  {
+    "itemId": 1,
+    "itemName": "iPhone 17 Pro Max",
+    "category": "Electronics",
+    "quantity": 150,
+    "price": 1199.00,
+    "supplierName": "Apple Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 2,
+    "itemName": "MacBook Pro 16-inch M4",
+    "category": "Electronics",
+    "quantity": 45,
+    "price": 2499.00,
+    "supplierName": "Apple Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 3,
+    "itemName": "Sony WH-1000XM5 Headphones",
+    "category": "Electronics",
+    "quantity": 230,
+    "price": 349.00,
+    "supplierName": "Sony Corporation",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 4,
+    "itemName": "Samsung 65-inch 4K QLED TV",
+    "category": "Electronics",
+    "quantity": 28,
+    "price": 1297.00,
+    "supplierName": "Samsung Electronics",
+    "stockStatus": "Low Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 5,
+    "itemName": "iPad Pro 13-inch M4",
+    "category": "Electronics",
+    "quantity": 67,
+    "price": 1299.00,
+    "supplierName": "Apple Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 6,
+    "itemName": "AirPods Pro 2nd Gen",
+    "category": "Electronics",
+    "quantity": 340,
+    "price": 249.00,
+    "supplierName": "Apple Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 7,
+    "itemName": "Nintendo Switch OLED",
+    "category": "Electronics",
+    "quantity": 95,
+    "price": 349.00,
+    "supplierName": "Nintendo Co., Ltd.",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 8,
+    "itemName": "PlayStation 5 Console",
+    "category": "Electronics",
+    "quantity": 0,
+    "price": 499.00,
+    "supplierName": "Sony Interactive Entertainment",
+    "stockStatus": "Out of Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 9,
+    "itemName": "Dyson V15 Detect Vacuum",
+    "category": "Furniture",
+    "quantity": 42,
+    "price": 749.00,
+    "supplierName": "Dyson Limited",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 10,
+    "itemName": "LG French Door Refrigerator",
+    "category": "Furniture",
+    "quantity": 15,
+    "price": 2199.00,
+    "supplierName": "LG Electronics",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 11,
+    "itemName": "Nespresso Vertuo Plus",
+    "category": "Furniture",
+    "quantity": 180,
+    "price": 199.00,
+    "supplierName": "Nestlé Nespresso",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 12,
+    "itemName": "Dyson Airwrap Curling Iron",
+    "category": "Tools",
+    "quantity": 88,
+    "price": 599.00,
+    "supplierName": "Dyson Limited",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 13,
+    "itemName": "Philips Sonicare Toothbrush",
+    "category": "Tools",
+    "quantity": 256,
+    "price": 199.00,
+    "supplierName": "Philips Healthcare",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 14,
+    "itemName": "Louis Vuitton Neverfull Bag",
+    "category": "Clothing",
+    "quantity": 22,
+    "price": 2030.00,
+    "supplierName": "Louis Vuitton (LVMH)",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 15,
+    "itemName": "Gucci GG Marmont Crossbody",
+    "category": "Clothing",
+    "quantity": 18,
+    "price": 1850.00,
+    "supplierName": "Gucci (Kering)",
+    "stockStatus": "Low Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 16,
+    "itemName": "Burberry Classic Trench Coat",
+    "category": "Clothing",
+    "quantity": 12,
+    "price": 2290.00,
+    "supplierName": "Burberry Group",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 17,
+    "itemName": "Nike Air Jordan 1 Retro High",
+    "category": "Clothing",
+    "quantity": 0,
+    "price": 180.00,
+    "supplierName": "Nike, Inc.",
+    "stockStatus": "Out of Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 18,
+    "itemName": "Canada Goose Expedition Parka",
+    "category": "Clothing",
+    "quantity": 35,
+    "price": 1150.00,
+    "supplierName": "Canada Goose Holdings",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 19,
+    "itemName": "Chanel Classic Flap Bag",
+    "category": "Clothing",
+    "quantity": 5,
+    "price": 8800.00,
+    "supplierName": "Chanel S.A.",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 20,
+    "itemName": "Ray-Ban Aviator Sunglasses",
+    "category": "Clothing",
+    "quantity": 420,
+    "price": 161.00,
+    "supplierName": "Luxottica Group",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 21,
+    "itemName": "Dior Sauvage Perfume 100ml",
+    "category": "Miscellaneous",
+    "quantity": 185,
+    "price": 185.00,
+    "supplierName": "Dior (LVMH)",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 22,
+    "itemName": "Chanel No.5 Eau de Parfum 50ml",
+    "category": "Miscellaneous",
+    "quantity": 142,
+    "price": 175.00,
+    "supplierName": "Chanel S.A.",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 23,
+    "itemName": "La Mer Moisturizing Cream 60ml",
+    "category": "Miscellaneous",
+    "quantity": 68,
+    "price": 395.00,
+    "supplierName": "La Mer (Estee Lauder)",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 24,
+    "itemName": "SK-II Facial Treatment Essence 230ml",
+    "category": "Miscellaneous",
+    "quantity": 93,
+    "price": 179.00,
+    "supplierName": "Procter & Gamble",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 25,
+    "itemName": "La Mer UV Defense Fluid SPF 50",
+    "category": "Miscellaneous",
+    "quantity": 55,
+    "price": 185.00,
+    "supplierName": "La Mer (Estee Lauder)",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 26,
+    "itemName": "Vitamix A3500 Blender",
+    "category": "Furniture",
+    "quantity": 48,
+    "price": 549.00,
+    "supplierName": "Vitamix Corporation",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 27,
+    "itemName": "KitchenAid Artisan Stand Mixer 5qt",
+    "category": "Furniture",
+    "quantity": 72,
+    "price": 449.00,
+    "supplierName": "KitchenAid (Whirlpool)",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 28,
+    "itemName": "Breville Bambino Plus Espresso",
+    "category": "Furniture",
+    "quantity": 38,
+    "price": 499.00,
+    "supplierName": "Breville Group",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 29,
+    "itemName": "Dyson Pure Cool Air Purifier",
+    "category": "Furniture",
+    "quantity": 62,
+    "price": 599.00,
+    "supplierName": "Dyson Limited",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 30,
+    "itemName": "Sony Alpha A7 IV Camera",
+    "category": "Electronics",
+    "quantity": 25,
+    "price": 2498.00,
+    "supplierName": "Sony Corporation",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 31,
+    "itemName": "Canon EOS R6 Mark II",
+    "category": "Electronics",
+    "quantity": 19,
+    "price": 2499.00,
+    "supplierName": "Canon Inc.",
+    "stockStatus": "Low Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 32,
+    "itemName": "GoPro HERO12 Black",
+    "category": "Electronics",
+    "quantity": 145,
+    "price": 399.00,
+    "supplierName": "GoPro, Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 33,
+    "itemName": "DJI Mini 4 Pro Drone",
+    "category": "Electronics",
+    "quantity": 58,
+    "price": 759.00,
+    "supplierName": "DJI Innovations",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 34,
+    "itemName": "Apple Watch Ultra 2",
+    "category": "Electronics",
+    "quantity": 89,
+    "price": 799.00,
+    "supplierName": "Apple Inc.",
+    "stockStatus": "In Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 35,
+    "itemName": "Garmin Fenix 7X Smartwatch",
+    "category": "Electronics",
+    "quantity": 43,
+    "price": 899.00,
+    "supplierName": "Garmin Ltd.",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 36,
+    "itemName": "Peloton Bike+ Exercise Bike",
+    "category": "Tools",
+    "quantity": 8,
+    "price": 2495.00,
+    "supplierName": "Peloton Interactive",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 37,
+    "itemName": "Theragun Pro Massager",
+    "category": "Tools",
+    "quantity": 76,
+    "price": 399.00,
+    "supplierName": "Therabody",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 38,
+    "itemName": "Yeti Tundra 45 Cooler",
+    "category": "Tools",
+    "quantity": 128,
+    "price": 325.00,
+    "supplierName": "YETI Coolers",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 39,
+    "itemName": "Herman Miller Aeron Chair",
+    "category": "Furniture",
+    "quantity": 24,
+    "price": 1395.00,
+    "supplierName": "Herman Miller",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 40,
+    "itemName": "IKEA BILLY Bookshelf",
+    "category": "Furniture",
+    "quantity": 210,
+    "price": 189.00,
+    "supplierName": "IKEA (Inter IKEA Group)",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 41,
+    "itemName": "Tempur-Pedic Mattress Queen",
+    "category": "Furniture",
+    "quantity": 18,
+    "price": 2299.00,
+    "supplierName": "Tempur Sealy International",
+    "stockStatus": "Low Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 42,
+    "itemName": "Dyson TP09 Purifier Fan",
+    "category": "Furniture",
+    "quantity": 51,
+    "price": 599.00,
+    "supplierName": "Dyson Limited",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 43,
+    "itemName": "Oral-B iO Series 9 Toothbrush",
+    "category": "Tools",
+    "quantity": 167,
+    "price": 399.00,
+    "supplierName": "Procter & Gamble",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 44,
+    "itemName": "Levi's 501 Original Jeans",
+    "category": "Clothing",
+    "quantity": 385,
+    "price": 79.00,
+    "supplierName": "Levi Strauss & Co.",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 45,
+    "itemName": "Tiffany Heart Key Pendant",
+    "category": "Miscellaneous",
+    "quantity": 32,
+    "price": 250.00,
+    "supplierName": "Tiffany & Co. (LVMH)",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 46,
+    "itemName": "Cartier Love Bracelet",
+    "category": "Miscellaneous",
+    "quantity": 6,
+    "price": 7050.00,
+    "supplierName": "Cartier (Richemont)",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 47,
+    "itemName": "Breitling Navitimer Chronograph",
+    "category": "Electronics",
+    "quantity": 9,
+    "price": 8100.00,
+    "supplierName": "Breitling S.A.",
+    "stockStatus": "Low Stock",
+    "featuredItem": 1
+  },
+  {
+    "itemId": 48,
+    "itemName": "Omega Seamaster Diver Watch",
+    "category": "Electronics",
+    "quantity": 11,
+    "price": 5500.00,
+    "supplierName": "Omega (Swatch Group)",
+    "stockStatus": "Low Stock",
+    "featuredItem": 0
+  },
+  {
+    "itemId": 49,
+    "itemName": "Oral-B iO 9 Electric Toothbrush",
+    "category": "Tools",
+    "quantity": 135,
+    "price": 349.00,
+    "supplierName": "Procter & Gamble",
+    "stockStatus": "In Stock",
+    "featuredItem": 0
+  }
+]

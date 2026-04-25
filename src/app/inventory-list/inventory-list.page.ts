@@ -10,13 +10,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar,
-         IonList, IonItem, IonLabel, IonBadge, IonRefresher, RefresherEventDetail,
+         IonList, IonItem, IonLabel, IonBadge, IonRefresher, IonRefresherContent, RefresherEventDetail,
          IonNote, IonIcon, IonButtons, IonButton, IonCard, IonCardHeader,
          IonCardTitle, IonCardSubtitle, IonCardContent, IonSelect, IonSelectOption,
          IonGrid, IonRow, IonCol, IonSpinner } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular';
 import { Subject, takeUntil } from 'rxjs';
-import { InventoryService } from '../../app/services/inventory.service';
-import { InventoryItem, Category, StockStatus } from '../../app/models/inventory.model';
+import { InventoryService } from '../services/inventory.service';
+import { InventoryItem, Category, StockStatus } from '../models/inventory.model';
 
 @Component({
   selector: 'app-inventory-list',
@@ -28,7 +29,7 @@ import { InventoryItem, Category, StockStatus } from '../../app/models/inventory
     FormsModule,
     IonHeader, IonToolbar, IonTitle, IonContent,
     IonSearchbar, IonList, IonItem, IonLabel, IonBadge,
-    IonRefresher, IonNote, IonIcon, IonButtons, IonButton,
+    IonRefresher, IonRefresherContent, IonNote, IonIcon, IonButtons, IonButton,
     IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent,
     IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonSpinner
   ]
@@ -47,7 +48,7 @@ export class InventoryListPage implements OnInit, OnDestroy {
   categories = Object.values(Category);
   stockStatuses = Object.values(StockStatus);
 
-  constructor(private inventoryService: InventoryService) {}
+  constructor(private inventoryService: InventoryService, private alertCtrl: AlertController) {}
 
   ngOnInit(): void {
     this.loadInventory();
@@ -173,9 +174,7 @@ export class InventoryListPage implements OnInit, OnDestroy {
   }
 
   async showHelp(): Promise<void> {
-    const { AlertController } = await import('@ionic/angular');
-    const alertController = new AlertController();
-    const alert = await alertController.create({
+    const alert = await this.alertCtrl.create({
       header: 'Help - Inventory List',
       message: `
         <p><strong>Search:</strong> Enter an item name or special note to filter results.</p>

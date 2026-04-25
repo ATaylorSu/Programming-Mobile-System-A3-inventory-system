@@ -17,7 +17,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, BehaviorSubject, of } from 'rxjs';
-import { catchError, map, retry, timeout, tap, switchMap, finalize } from 'rxjs/operators';
+import { catchError, map, retry, timeout, tap } from 'rxjs/operators';
 import {
   InventoryItem,
   CreateInventoryItem,
@@ -27,6 +27,7 @@ import {
   StockStatus
 } from '../models/inventory.model';
 import { InventoryError, ErrorCode } from './inventory-error.handler';
+import * as localProducts from '../../assets/products.json';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,14 @@ export class InventoryService {
   public loading$ = this.loadingSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.loadInventory();
+    this.loadLocalProducts();
+  }
+
+  private loadLocalProducts(): void {
+    this.setLoading(true);
+    const products = (localProducts as any).default || localProducts;
+    this.inventorySubject.next(products);
+    this.setLoading(false);
   }
 
   private getHttpHeaders(): HttpHeaders {
@@ -94,10 +102,7 @@ export class InventoryService {
   }
 
   private loadInventory(): void {
-    this.getAllItems().subscribe({
-      next: (items) => this.inventorySubject.next(items),
-      error: (err) => console.error('Failed to load inventory:', err)
-    });
+    this.loadLocalProducts();
   }
 
   private setLoading(loading: boolean): void {
@@ -105,14 +110,12 @@ export class InventoryService {
   }
 
   /**
-   * Retrieve all inventory items from the API
+   * Retrieve all inventory items from local data
    * GET endpoint/
    */
   getAllItems(): Observable<InventoryItem[]> {
-    return this.http.get<InventoryItem[]>(this.API_BASE_URL).pipe(
-      timeout(this.TIMEOUT_MS),
-      retry({ count: this.MAX_RETRIES, delay: 1000 }),
-      catchError(this.handleError)
+    return of((localProducts as any).default || localProducts).pipe(
+      map((items) => items as InventoryItem[])
     );
   }
 
