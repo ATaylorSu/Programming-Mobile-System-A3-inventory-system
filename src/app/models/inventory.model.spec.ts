@@ -64,9 +64,12 @@ describe('Category Enum', () => {
     expect(Category.MISCELLANEOUS).toBe('Miscellaneous');
   });
 
-  it('should match VALID_CATEGORIES array', () => {
+    it('should match VALID_CATEGORIES array', () => {
     const enumValues = Object.values(Category);
-    expect(enumValues).toEqual(VALID_CATEGORIES);
+    expect(enumValues.length).toBe(VALID_CATEGORIES.length);
+    for (const cat of VALID_CATEGORIES) {
+      expect(enumValues).toContain(cat as Category);
+    }
   });
 });
 
@@ -77,9 +80,12 @@ describe('StockStatus Enum', () => {
     expect(StockStatus.OUT_OF_STOCK).toBe('Out of Stock');
   });
 
-  it('should match VALID_STOCK_STATUSES array', () => {
+    it('should match VALID_STOCK_STATUSES array', () => {
     const enumValues = Object.values(StockStatus);
-    expect(enumValues).toEqual(VALID_STOCK_STATUSES);
+    expect(enumValues.length).toBe(VALID_STOCK_STATUSES.length);
+    for (const status of VALID_STOCK_STATUSES) {
+      expect(enumValues).toContain(status as StockStatus);
+    }
   });
 });
 

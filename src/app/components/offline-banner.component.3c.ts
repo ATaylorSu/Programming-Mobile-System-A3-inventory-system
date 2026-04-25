@@ -14,7 +14,7 @@ import { Network } from '@capacitor/network';
 @Component({
   selector: 'app-offline-banner',
   template: `
-    <ion-banner *ngIf="!isOnline" class="offline-banner" color="warning">
+    <ion-item *ngIf="!isOnline" class="offline-banner" color="warning">
       <ion-icon name="cloud-offline-outline"></ion-icon>
       <ion-label>
         You are currently offline. Some features may be limited.
@@ -22,7 +22,7 @@ import { Network } from '@capacitor/network';
       <ion-button fill="clear" size="small" (click)="checkConnection()">
         <ion-icon name="refresh-outline"></ion-icon>
       </ion-button>
-    </ion-banner>
+    </ion-item>
   `,
   styles: [`
     .offline-banner {

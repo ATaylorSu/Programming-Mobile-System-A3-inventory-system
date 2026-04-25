@@ -22,12 +22,11 @@ import { StorageService3c } from '../services/storage.service.3c';
         </ion-button>
       </div>
       
-      <ion-chip *ngFor="let term of history; let i = index" 
-                (click)="selectTerm(term)"
-                (ionClose)="removeTerm(i)">
+      <ion-chip *ngFor="let term of history; let i = index"
+                (click)="selectTerm(term)">
         <ion-icon name="time-outline"></ion-icon>
         <ion-label>{{ term }}</ion-label>
-        <ion-icon name="close-circle"></ion-icon>
+        <ion-icon name="close-circle" (click)="removeTerm(i); $event.stopPropagation()"></ion-icon>
       </ion-chip>
     </div>
   `,

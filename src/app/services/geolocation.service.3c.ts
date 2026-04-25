@@ -13,7 +13,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { Geolocation, GeolocationOptions, Geoposition } from '@capacitor/geolocation';
+import { Geolocation } from '@capacitor/geolocation';
 import { LoadingController } from '@ionic/angular';
 
 @Injectable({
@@ -54,7 +54,7 @@ export class GeolocationService3c {
    * @param options Optional geolocation options
    * @returns Geoposition or null if failed
    */
-  async getCurrentPosition(options?: GeolocationOptions): Promise<Geoposition | null> {
+  async getCurrentPosition(options?: any): Promise<any> {
     const hasPermission = await this.hasPermission();
     
     if (!hasPermission) {
@@ -70,7 +70,7 @@ export class GeolocationService3c {
     });
     await loading.present();
 
-    const defaultOptions: GeolocationOptions = {
+    const defaultOptions = {
       timeout: this.DEFAULT_TIMEOUT,
       maximumAge: this.DEFAULT_MAX_AGE,
       enableHighAccuracy: true
@@ -95,7 +95,7 @@ export class GeolocationService3c {
    * @returns Watch ID to clear the watch
    */
   watchPosition(
-    callback: (position: Geoposition) => void,
+    callback: (position: any) => void,
     errorCallback?: (error: any) => void
   ): Promise<string> {
     return new Promise(async (resolve, reject) => {

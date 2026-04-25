@@ -144,13 +144,14 @@ describe('StorageService3c', () => {
     it('should return null for expired cache', async () => {
       const items = [{ name: 'Test' }];
       await service.cacheInventoryItems(items);
-      
-      jest.spyOn(Date, 'now').mockReturnValue(Date.now() + 60 * 60 * 1000);
-      
+
+      const originalDateNow = Date.now.bind(Date);
+      Date.now = () => originalDateNow() + 60 * 60 * 1000;
+
       const cached = await service.getCachedInventoryItems<any>();
       expect(cached).toBeNull();
 
-      jest.restoreAllMocks();
+      Date.now = originalDateNow;
     });
   });
 

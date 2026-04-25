@@ -27,7 +27,6 @@ import {
   StockStatus
 } from '../models/inventory.model';
 import { InventoryError, ErrorCode } from './inventory-error.handler';
-import * as localProducts from '../../assets/products.json';
 
 @Injectable({
   providedIn: 'root'
@@ -44,14 +43,7 @@ export class InventoryService {
   public loading$ = this.loadingSubject.asObservable();
 
   constructor(private http: HttpClient) {
-    this.loadLocalProducts();
-  }
-
-  private loadLocalProducts(): void {
-    this.setLoading(true);
-    const products = (localProducts as any).default || localProducts;
-    this.inventorySubject.next(products);
-    this.setLoading(false);
+    this.loadInventory();
   }
 
   private getHttpHeaders(): HttpHeaders {
@@ -102,7 +94,10 @@ export class InventoryService {
   }
 
   private loadInventory(): void {
-    this.loadLocalProducts();
+    this.getAllItems().subscribe({
+      next: (items) => this.inventorySubject.next(items),
+      error: (err) => console.error('Failed to load inventory:', err)
+    });
   }
 
   private setLoading(loading: boolean): void {
@@ -110,12 +105,14 @@ export class InventoryService {
   }
 
   /**
-   * Retrieve all inventory items from local data
+   * Retrieve all inventory items from the API
    * GET endpoint/
    */
   getAllItems(): Observable<InventoryItem[]> {
-    return of((localProducts as any).default || localProducts).pipe(
-      map((items) => items as InventoryItem[])
+    return this.http.get<InventoryItem[]>(this.API_BASE_URL).pipe(
+      timeout(this.TIMEOUT_MS),
+      retry({ count: this.MAX_RETRIES, delay: 1000 }),
+      catchError(this.handleError)
     );
   }
 

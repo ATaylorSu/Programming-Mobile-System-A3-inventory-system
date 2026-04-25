@@ -13,10 +13,11 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
          IonIcon, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle,
          IonCardContent, IonList, IonItem, IonLabel, IonInput, IonTextarea,
          IonSelect, IonSelectOption, IonBadge, IonSegment, IonSegmentButton,
-         IonNote, IonSpinner, AlertController, IonSearchbar, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+         IonNote, IonSpinner, IonSearchbar, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { AlertController } from '@ionic/angular';
 import { Subject, takeUntil } from 'rxjs';
-import { InventoryService } from '../../app/services/inventory.service';
-import { InventoryItem, Category, StockStatus, UpdateInventoryItem } from '../../app/models/inventory.model';
+import { InventoryService } from '../services/inventory.service';
+import { InventoryItem, Category, StockStatus, UpdateInventoryItem } from '../models/inventory.model';
 
 @Component({
   selector: 'app-edit-delete',
@@ -48,7 +49,7 @@ export class EditDeletePage implements OnInit, OnDestroy {
   searchResults: InventoryItem[] = [];
 
   // Edit form fields
-  editCategory: string = '';
+  editCategory: Category | '' = '';
   editQuantity: number | null = null;
   editPrice: number | null = null;
   editSupplierName: string = '';

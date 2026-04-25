@@ -13,7 +13,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { Camera, CameraResultType, CameraSource, ImageOptions } from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { LoadingController } from '@ionic/angular';
@@ -64,14 +64,13 @@ export class CameraService3c {
       return null;
     }
 
-    const options: ImageOptions = {
+    const options = {
       quality: this.DEFAULT_QUALITY,
       allowEditing: true,
       resultType: CameraResultType.Base64,
       source: CameraSource.Camera,
       width: this.MAX_WIDTH,
-      height: this.MAX_HEIGHT,
-      preserveAspectRatio: true
+      height: this.MAX_HEIGHT
     };
 
     try {
@@ -99,20 +98,19 @@ export class CameraService3c {
    */
   async selectFromGallery(): Promise<string | null> {
     const hasPermission = await this.requestPermissions();
-    
+
     if (!hasPermission) {
       console.error('Photos permission denied');
       return null;
     }
 
-    const options: ImageOptions = {
+    const options = {
       quality: this.DEFAULT_QUALITY,
       allowEditing: true,
       resultType: CameraResultType.Base64,
       source: CameraSource.Photos,
       width: this.MAX_WIDTH,
-      height: this.MAX_HEIGHT,
-      preserveAspectRatio: true
+      height: this.MAX_HEIGHT
     };
 
     try {
@@ -175,7 +173,7 @@ export class CameraService3c {
         path: filepath,
         directory: Directory.Data
       });
-      return file.data;
+      return typeof file.data === 'string' ? file.data : null;
     } catch (error) {
       console.error('Error reading image:', error);
       return null;

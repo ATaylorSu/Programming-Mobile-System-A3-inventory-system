@@ -15,7 +15,7 @@ import { CameraService3c } from '../services/camera.service.3c';
 import { ImageCaptureComponent } from '../components/image-capture.component.3c';
 import { OfflineBannerComponent } from '../components/offline-banner.component.3c';
 import { LoadingSkeletonComponent } from '../components/loading-skeleton.component.3c';
-import { InventoryItem } from '../../models/inventory.model';
+import { InventoryItem, Category, StockStatus } from '../models/inventory.model';
 
 @Component({
   selector: 'app-inventory-list-advanced',
@@ -48,12 +48,9 @@ import { InventoryItem } from '../../models/inventory.model';
       <ion-list *ngIf="!loading && items.length > 0">
         <ion-item-sliding *ngFor="let item of filteredItems">
           <ion-item>
-            <ion-thumbnail slot="start" *ngIf="item.image">
-              <img [src]="item.image" />
-            </ion-thumbnail>
-            <ion-icon name="cube-outline" slot="start" *ngIf="!item.image"></ion-icon>
+            <ion-icon name="cube-outline" slot="start"></ion-icon>
             <ion-label>
-              <h2>{{ item.name }}</h2>
+              <h2>{{ item.itemName }}</h2>
               <p>{{ item.category }}</p>
               <p>{{ item.price | currency }}</p>
             </ion-label>
@@ -162,7 +159,7 @@ export class InventoryListAdvancedPage implements OnInit {
 
     const term = this.searchTerm.toLowerCase();
     this.filteredItems = this.items.filter(item => 
-      item.name.toLowerCase().includes(term) ||
+      item.itemName.toLowerCase().includes(term) ||
       item.category.toLowerCase().includes(term)
     );
   }

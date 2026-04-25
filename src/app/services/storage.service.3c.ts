@@ -14,27 +14,33 @@
 
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { encrypt, decrypt } from '@ionic/utilsCrypto';
+
+export interface UserPreferences3c {
+  theme: 'light' | 'dark' | 'auto';
+  sortBy: 'name' | 'category' | 'price' | 'date';
+  sortOrder: 'asc' | 'desc';
+  itemsPerPage: number;
+  autoRefresh: boolean;
+  notifications: boolean;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class StorageService3c {
   private storage: Storage | null = null;
-  private readonly ENCRYPTION_KEY = 'inventory-secure-key';
 
   constructor() {
     this.initStorage();
   }
 
   /**
-   * Initialize Ionic Storage with encryption
+   * Initialize Ionic Storage
    */
   private async initStorage(): Promise<void> {
     this.storage = new Storage({
       name: 'inventory_db',
       storeName: 'inventory_data',
-      encryptionKey: this.ENCRYPTION_KEY,
       driverOrder: ['indexeddb', 'sqlite', 'localstorage']
     });
 
@@ -279,13 +285,4 @@ export class StorageService3c {
       throw new Error('Invalid data format');
     }
   }
-}
-
-export interface UserPreferences3c {
-  theme: 'light' | 'dark' | 'auto';
-  sortBy: 'name' | 'category' | 'price' | 'date';
-  sortOrder: 'asc' | 'desc';
-  itemsPerPage: number;
-  autoRefresh: boolean;
-  notifications: boolean;
 }

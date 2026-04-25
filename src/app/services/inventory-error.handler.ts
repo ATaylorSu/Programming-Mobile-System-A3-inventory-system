@@ -14,7 +14,9 @@ export class InventoryError extends Error {
   ) {
     super(message);
     this.name = 'InventoryError';
-    Error.captureStackTrace(this, this.constructor);
+    if (typeof (Error as any).captureStackTrace === 'function') {
+      (Error as any).captureStackTrace(this, this.constructor);
+    }
   }
 }
 

@@ -7,7 +7,7 @@
  */
 
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './privacy-security.page.html',
   styleUrls: ['./privacy-security.page.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, IonicModule]
 })
 export class PrivacySecurityPage {
   constructor(private alertCtrl: AlertController) {}

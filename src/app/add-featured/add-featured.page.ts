@@ -15,8 +15,8 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton,
          IonSelect, IonSelectOption, IonBadge, IonSegment, IonSegmentButton,
          IonNote, IonSpinner, AlertController, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { Subject, takeUntil } from 'rxjs';
-import { InventoryService } from '../../app/services/inventory.service';
-import { InventoryItem, Category, StockStatus, CreateInventoryItem } from '../../app/models/inventory.model';
+import { InventoryService } from '../services/inventory.service';
+import { InventoryItem, Category, StockStatus, CreateInventoryItem } from '../models/inventory.model';
 
 @Component({
   selector: 'app-add-featured',
