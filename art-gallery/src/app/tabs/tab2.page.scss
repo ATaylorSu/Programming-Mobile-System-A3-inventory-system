@@ -1,0 +1,15 @@
+/* Tab 2 - Add Page Styles */
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.scroll-container {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 16px;
+  padding-bottom: 80px;
+}

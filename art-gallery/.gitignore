@@ -1,0 +1,37 @@
+# Ionic
+dist
+www
+node_modules
+plugins
+.env
+.env.*
+!.env.example
+src/environments/environments.prod.ts
+src/environments/environments.prod.env
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.tgz
+*.log
+
+# Testing
+coverage
+.nyc_output
+
+# Cordova
+/platforms
+/cordova/build
+/cordova/logs
+
+# Capacitor
+/android
+/ios

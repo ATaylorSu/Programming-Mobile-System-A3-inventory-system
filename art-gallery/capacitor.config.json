@@ -1,0 +1,9 @@
+{
+  "appId": "com.scu.artgallery",
+  "appName": "Art Gallery",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {}
+}
