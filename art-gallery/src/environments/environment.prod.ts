@@ -1,0 +1,12 @@
+/**
+ * Production Environment Configuration
+ *
+ * Author: Haozhe Song
+ * Student ID: 24832672
+ * Course: PROG2005 Programming Mobile Systems
+ */
+
+export const environment = {
+  production: true,
+  apiUrl: 'https://prog2005.it.scu.edu.au/ArtGalley'
+};
