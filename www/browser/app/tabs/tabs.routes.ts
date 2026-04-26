@@ -1,0 +1,38 @@
+/**
+ * Tabs Routing Configuration
+ * Student: BoLi
+ * Course: PROG2005 Programming Mobile Systems
+ * Assessment: A3 Part1
+ * Description: Defines routes for the tab-based navigation structure
+ */
+
+import { Routes } from '@angular/router';
+import { authGuard } from '../guards/auth.guard';
+
+export const tabsRoutes: Routes = [
+  {
+    path: '',
+    redirectTo: 'inventory-list',
+    pathMatch: 'full'
+  },
+  {
+    path: 'inventory-list',
+    loadComponent: () => import('../inventory-list/inventory-list.page').then(m => m.InventoryListPage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'add-featured',
+    loadComponent: () => import('../add-featured/add-featured.page').then(m => m.AddFeaturedPage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'edit-delete',
+    loadComponent: () => import('../edit-delete/edit-delete.page').then(m => m.EditDeletePage),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'privacy-security',
+    loadComponent: () => import('../privacy-security/privacy-security.page').then(m => m.PrivacySecurityPage),
+    canActivate: [authGuard]
+  }
+];
