@@ -1,0 +1,174 @@
+/**
+ * Ionic Theme Variables
+ * Green Theme matching A2's design
+ *
+ * Author: Haozhe Song
+ * Student ID: 24832672
+ * Course: PROG2005 Programming Mobile Systems
+ */
+
+/* Ionic Colors and Variables */
+:root {
+  /** Primary - Green from A2 */
+  --ion-color-primary: #166534;
+  --ion-color-primary-rgb: 22, 101, 52;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #14532d;
+  --ion-color-primary-tint: #22c55e;
+
+  /** Secondary */
+  --ion-color-secondary: #64748b;
+  --ion-color-secondary-rgb: 100, 116, 139;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #475569;
+  --ion-color-secondary-tint: #94a3b8;
+
+  /** Tertiary */
+  --ion-color-tertiary: #10b981;
+  --ion-color-tertiary-rgb: 16, 185, 129;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #065f46;
+  --ion-color-tertiary-tint: #d1fae5;
+
+  /** Success */
+  --ion-color-success: #10b981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #065f46;
+  --ion-color-success-tint: #d1fae5;
+
+  /** Warning */
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #92400e;
+  --ion-color-warning-tint: #fef3c7;
+
+  /** Danger */
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #dc2626;
+  --ion-color-danger-tint: #fee2e2;
+
+  /** Light */
+  --ion-color-light: #f0fdf4;
+  --ion-color-light-rgb: 240, 253, 244;
+  --ion-color-light-contrast: #1e293b;
+  --ion-color-light-contrast-rgb: 30, 41, 59;
+  --ion-color-light-shade: #dcfce7;
+  --ion-color-light-tint: #ffffff;
+
+  /** Medium */
+  --ion-color-medium: #94a3b8;
+  --ion-color-medium-rgb: 148, 163, 184;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #475569;
+  --ion-color-medium-tint: #64748b;
+
+  /** Dark */
+  --ion-color-dark: #1e293b;
+  --ion-color-dark-rgb: 30, 41, 59;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #475569;
+  --ion-color-dark-tint: #64748b;
+
+  /** Background */
+  --ion-background-color: #f0fdf4;
+  --ion-background-color-rgb: 240, 253, 244;
+
+  /** Text */
+  --ion-text-color: #1e293b;
+  --ion-text-color-rgb: 30, 41, 59;
+
+  /** Card background */
+  --ion-card-background: #ffffff;
+
+  /** Item background */
+  --ion-item-background: #ffffff;
+
+  /** Toolbar */
+  --ion-toolbar-background: #166534;
+  --ion-toolbar-color: #ffffff;
+
+  /** Tab bar */
+  --ion-tab-bar-background: #ffffff;
+  --ion-tab-bar-color: #94a3b8;
+  --ion-tab-bar-color-selected: #166534;
+
+  /** Typography */
+  --ion-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Ionic Text Colors */
+.ion-color-primary {
+  --ion-color-base: #166534;
+  --ion-color-base-rgb: 22, 101, 52;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #14532d;
+  --ion-color-tint: #22c55e;
+}
+
+.ion-color-secondary {
+  --ion-color-base: #64748b;
+  --ion-color-base-rgb: 100, 116, 139;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #475569;
+  --ion-color-tint: #94a3b8;
+}
+
+.ion-color-success {
+  --ion-color-base: #10b981;
+  --ion-color-base-rgb: 16, 185, 129;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #065f46;
+  --ion-color-tint: #d1fae5;
+}
+
+.ion-color-warning {
+  --ion-color-base: #f59e0b;
+  --ion-color-base-rgb: 245, 158, 11;
+  --ion-color-contrast: #000000;
+  --ion-color-shade: #92400e;
+  --ion-color-tint: #fef3c7;
+}
+
+.ion-color-danger {
+  --ion-color-base: #ef4444;
+  --ion-color-base-rgb: 239, 68, 68;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #dc2626;
+  --ion-color-tint: #fee2e2;
+}
+
+.ion-color-light {
+  --ion-color-base: #f0fdf4;
+  --ion-color-base-rgb: 240, 253, 244;
+  --ion-color-contrast: #1e293b;
+  --ion-color-shade: #dcfce7;
+  --ion-color-tint: #ffffff;
+}
+
+.ion-color-medium {
+  --ion-color-base: #94a3b8;
+  --ion-color-base-rgb: 148, 163, 184;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #475569;
+  --ion-color-tint: #64748b;
+}
+
+.ion-color-dark {
+  --ion-color-base: #1e293b;
+  --ion-color-base-rgb: 30, 41, 59;
+  --ion-color-contrast: #ffffff;
+  --ion-color-shade: #475569;
+  --ion-color-tint: #64748b;
+}

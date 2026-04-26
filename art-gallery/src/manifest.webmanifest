@@ -1,0 +1,16 @@
+{
+  "name": "Art Gallery",
+  "short_name": "ArtGallery",
+  "description": "Ionic Mobile Inventory Management System - Art Gallery",
+  "start_url": ".",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/icon/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#166534",
+  "background_color": "#f0fdf4"
+}
