@@ -6,121 +6,191 @@
 - **Assessment**: A3 Part1 Phase 3c
 - **Student**: BoLi
 
-## Phase 3c Overview
-This phase extends the Inventory Management System with Ionic Native components integration, including camera, geolocation, and enhanced storage capabilities.
+/**
+ * Art Gallery - Ionic Mobile Inventory Management System
+ *
+ * ============================================================================
+ *
+ * Project Overview
+ * ----------------
+ * This is a cross-platform mobile application built with Ionic Framework that
+ * allows users to manage an inventory database through RESTful API interactions.
+ *
+ * The application extends the Angular web application from A2, providing a
+ * mobile-friendly interface with native-like features.
+ *
+ * ============================================================================
+ *
+ * Features
+ * --------
+ * 1. List Page (Tab 1)
+ *    - View all inventory items
+ *    - Pull-to-refresh functionality
+ *    - Featured item indicators
+ *
+ * 2. Add Page (Tab 2)
+ *    - Add new inventory items
+ *    - Form validation
+ *    - Featured Items section
+ *
+ * 3. Manage Page (Tab 3)
+ *    - Update existing items
+ *    - Delete items (with confirmation)
+ *    - Protected items (Laptop cannot be deleted)
+ *
+ * 4. Privacy Page (Tab 4)
+ *    - Data storage information
+ *    - Security practices
+ *    - API documentation
+ *
+ * ============================================================================
+ *
+ * Data Fields
+ * -----------
+ * - Item_ID (Auto-incrementing, unique)
+ * - Item_Name (Required, unique)
+ * - Category (Electronics, Furniture, Clothing, Tools, Miscellaneous)
+ * - Quantity (Required, integer)
+ * - Price (Required, integer)
+ * - Supplier_Name (Required)
+ * - Stock_Status (In Stock, Low Stock, Out of Stock)
+ * - Featured_Item (0 or 1, default: 0)
+ * - Special_Note (Optional)
+ *
+ * ============================================================================
+ *
+ * API Endpoints
+ * -------------
+ * Base URL: https://prog2005.it.scu.edu.au/ArtGalley
+ *
+ * GET    /                     - Get all items
+ * GET    /{name}               - Get item by name
+ * POST   /                     - Create new item
+ * PUT    /{name}               - Update existing item
+ * DELETE /{name}               - Delete item
+ *
+ * Note: The "Laptop" item cannot be deleted
+ *
+ * ============================================================================
+ *
+ * Installation & Running
+ * ---------------------
+ *
+ * 1. Install dependencies:
+ *    npm install
+ *
+ * 2. Run in development mode:
+ *    npm start
+ *    or
+ *    ionic serve
+ *
+ * 3. Build for production:
+ *    npm run build
+ *
+ * 4. Add platforms for mobile:
+ *    ionic cordova platform add android
+ *    ionic cordova platform add ios
+ *
+ * 5. Run on device/emulator:
+ *    ionic cordova run android
+ *    ionic cordova run ios
+ *
+ * ============================================================================
+ *
+ * Project Structure
+ * ----------------
+ *
+ * art-gallery/
+ * ├── src/
+ * │   ├── app/
+ * │   │   ├── models/
+ * │   │   │   └── inventory.model.ts    # Data models & interfaces
+ * │   │   ├── services/
+ * │   │   │   └── inventory.service.ts # API service
+ * │   │   ├── tabs/
+ * │   │   │   ├── tab1.page.ts         # List page component
+ * │   │   │   ├── tab2.page.ts         # Add page component
+ * │   │   │   ├── tab3.page.ts         # Manage page component
+ * │   │   │   ├── tab4.page.ts         # Privacy page component
+ * │   │   │   ├── tabs.page.ts         # Tab container
+ * │   │   │   ├── tabs.module.ts       # Tab module
+ * │   │   │   └── tabs.router.module.ts# Tab routing
+ * │   │   ├── app.component.ts        # Root component
+ * │   │   ├── app.module.ts           # Root module
+ * │   │   └── app-routing.module.ts   # Root routing
+ * │   ├── environments/
+ * │   │   ├── environment.ts          # Dev environment
+ * │   │   └── environment.prod.ts     # Production environment
+ * │   ├── theme/
+ * │   │   └── variables.scss          # Ionic theme variables
+ * │   ├── global.scss                 # Global styles
+ * │   ├── index.html                  # Entry HTML
+ * │   └── main.ts                     # Entry point
+ * ├── angular.json                    # Angular CLI config
+ * ├── tsconfig.json                   # TypeScript config
+ * └── package.json                    # Dependencies
+ *
+ * ============================================================================
+ *
+ * Technologies Used
+ * -----------------
+ * - Angular 17
+ * - Ionic 7
+ * - TypeScript 5.2
+ * - SCSS
+ * - HttpClient for API calls
+ *
+ * ============================================================================
+ *
+ * Testing
+ * -------
+ * - Web: ionic serve (or npm start)
+ * - Mobile: Test on physical device or emulator
+ * - Note: Some features (like native plugins) require actual device testing
+ *
+ * ============================================================================
+ */
 
-## New Features
+# Getting Started with Ionic
 
-### 1. Camera Integration (`camera.service.3c.ts`)
-- **Camera Service** for capturing photos using device camera
-- **Image Picker** for selecting images from gallery
-- **Image Compression** with configurable quality settings
-- **Filesystem Integration** for saving and reading images
+This project was generated with [Ionic CLI](https://ionicframework.com/docs/cli) and [Angular](https://angular.io/).
 
-### 2. Geolocation Integration (`geolocation.service.3c.ts`)
-- **Current Location** retrieval with accuracy data
-- **Location Permission** handling
-- **Distance Calculation** using Haversine formula
-- **Coordinate Formatting** for display
+## Development Setup
 
-### 3. Enhanced Storage (`storage.service.3c.ts`)
-- **Encrypted Storage** using Ionic Storage
-- **Offline Caching** for inventory items
-- **User Preferences** persistence
-- **Search History** management
-- **Draft Items** for form auto-save
-
-### 4. Reusable Components
-- **Image Capture Component** (`image-capture.component.3c.ts`)
-- **Offline Banner Component** (`offline-banner.component.3c.ts`)
-- **Search History Component** (`search-history.component.3c.ts`)
-- **Loading Skeleton Component** (`loading-skeleton.component.3c.ts`)
-
-### 5. Enhanced Pages
-- **Location Picker Page** (`location-picker-page.3c.ts`)
-- **Advanced Inventory List** (`inventory-list-advanced-page.3c.ts`)
-
-## Installation & Setup
-
-### Required Packages
 ```bash
-npm install @capacitor/camera
-npm install @capacitor/filesystem
-npm install @capacitor/geolocation
-npm install @capacitor/network
-npm install @ionic/storage-angular
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+
+# Open in browser
+# Navigate to http://localhost:8100
 ```
 
-### Capacitor Configuration
-Add required permissions to `android/app/src/main/AndroidManifest.xml`:
-```xml
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-```
+## Mobile Development
 
-### iOS Permissions (Info.plist)
-```xml
-<key>NSCameraUsageDescription</key>
-<string>This app needs camera access to capture inventory photos</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>This app needs photo library access to select inventory images</string>
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>This app needs location access to track inventory locations</string>
-```
-
-## File Structure
-```
-阶段3c/
-├── src/
-│   └── app/
-│       ├── components/
-│       │   ├── image-capture.component.3c.ts
-│       │   ├── offline-banner.component.3c.ts
-│       │   ├── search-history.component.3c.ts
-│       │   └── loading-skeleton.component.3c.ts
-│       ├── pages/
-│       │   ├── location-picker-page.3c.ts
-│       │   └── inventory-list-advanced-page.3c.ts
-│       └── services/
-│           ├── camera.service.3c.ts
-│           ├── camera.service.3c.spec.ts
-│           ├── geolocation.service.3c.ts
-│           ├── geolocation.service.3c.spec.ts
-│           ├── storage.service.3c.ts
-│           └── storage.service.3c.spec.ts
-└── README.md
-```
-
-## Testing
-Run unit tests:
 ```bash
-ng test
+# Add Android platform
+ionic cordova platform add android
+
+# Add iOS platform
+ionic cordova platform add ios
+
+# Build for Android
+ionic cordova build android
+
+# Run on Android device/emulator
+ionic cordova run android
+
+# Run on iOS simulator
+ionic cordova run ios
 ```
 
-Run specific test file:
-```bash
-ng test --include='**/storage.service.3c.spec.ts'
-```
+## API Configuration
 
-## Native Features Summary
+The application connects to:
+- **Development**: `https://prog2005.it.scu.edu.au/ArtGalley`
+- API endpoints are configured in `src/environments/environment.ts`
 
-| Feature | Service | Platform Support |
-|---------|---------|------------------|
-| Camera | CameraService3c | iOS, Android |
-| Gallery | CameraService3c | iOS, Android |
-| Geolocation | GeolocationService3c | iOS, Android |
-| Offline Mode | StorageService3c | All |
-| Encrypted Storage | StorageService3c | All |
-
-## Help Widget Integration
-Each component includes help functionality accessible via the help button in the toolbar.
-
-## Technologies Used
-- Ionic Framework
-- Angular 17+
-- TypeScript
-- Capacitor Native Plugins
-- Ionic Storage
+// Note: The search functionality may occasionally have bugs.
