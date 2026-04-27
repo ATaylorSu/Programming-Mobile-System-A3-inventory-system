@@ -1,0 +1,357 @@
+/**
+ * Global Styles for Art Gallery - Ionic Mobile Inventory Management System
+ *
+ * Author: Haozhe Song
+ * Student ID: 24832672
+ * Course: PROG2005 Programming Mobile Systems
+ * Assessment: A3 - Ionic Mobile Inventory Management System
+ */
+
+/* ===== CSS Variables (Green Theme from A2) ===== */
+:root {
+  /* Primary Colors */
+  --ion-color-primary: #166534;
+  --ion-color-primary-rgb: 22, 101, 52;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #14532d;
+  --ion-color-primary-tint: #22c55e;
+
+  /* Secondary Colors */
+  --ion-color-secondary: #64748b;
+  --ion-color-secondary-rgb: 100, 116, 139;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #475569;
+  --ion-color-secondary-tint: #94a3b8;
+
+  /* Success Colors */
+  --ion-color-success: #10b981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #065f46;
+  --ion-color-success-tint: #d1fae5;
+
+  /* Warning Colors */
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #92400e;
+  --ion-color-warning-tint: #fef3c7;
+
+  /* Danger Colors */
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #dc2626;
+  --ion-color-danger-tint: #fee2e2;
+
+  /* Light Colors */
+  --ion-color-light: #f0fdf4;
+  --ion-color-light-rgb: 240, 253, 244;
+  --ion-color-light-contrast: #1e293b;
+  --ion-color-light-contrast-rgb: 30, 41, 59;
+  --ion-color-light-shade: #dcfce7;
+  --ion-color-light-tint: #ffffff;
+
+  /* Medium Colors */
+  --ion-color-medium: #94a3b8;
+  --ion-color-medium-rgb: 148, 163, 184;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #475569;
+  --ion-color-medium-tint: #64748b;
+
+  /* Background Colors */
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #dcfce7;
+
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  /* Border Colors */
+  --border-color: #bbf7d0;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Font Sizes */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --ion-background-color: var(--bg-primary);
+  --ion-text-color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ===== Custom Variables ===== */
+ion-content {
+  --background: var(--bg-primary);
+}
+
+ion-toolbar {
+  --background: linear-gradient(135deg, var(--ion-color-primary), var(--ion-color-primary-shade));
+  --color: #ffffff;
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  --border: 1px solid var(--border-color);
+}
+
+ion-tab-button {
+  --color: var(--text-muted);
+  --color-selected: var(--ion-color-primary);
+}
+
+/* ===== Card Styles ===== */
+.custom-card {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin: var(--spacing-sm);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+}
+
+.card-header {
+  background: var(--bg-tertiary);
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-body {
+  padding: var(--spacing-md);
+}
+
+/* ===== Badge Styles ===== */
+.item-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-electronics {
+  background-color: #d1fae5;
+  color: #166534;
+}
+
+.badge-furniture {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-clothing {
+  background-color: #fce7f3;
+  color: #9d174d;
+}
+
+.badge-tools {
+  background-color: #dcfce7;
+  color: #14532d;
+}
+
+.badge-miscellaneous {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.badge-popular {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.badge-in-stock {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-low-stock {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-out-of-stock {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-featured {
+  background-color: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+  text-align: center;
+  padding: 60px var(--spacing-lg);
+  color: var(--text-muted);
+}
+
+.empty-state h3 {
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ===== Search Bar ===== */
+.search-container {
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  margin: var(--spacing-sm);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+/* ===== Form Styles ===== */
+.form-container {
+  padding: var(--spacing-md);
+}
+
+ion-item {
+  --border-color: var(--border-color);
+  --highlight-color-focused: var(--ion-color-primary);
+}
+
+/* ===== Alert Styles ===== */
+.alert-container {
+  padding: var(--spacing-md);
+}
+
+.alert-success {
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #14532d;
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+.alert-error {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+.alert-info {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  color: #166534;
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ===== Loading ===== */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+}
+
+/* ===== Detail Row ===== */
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+}
+
+.detail-label {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.detail-value {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.detail-value.price {
+  color: var(--ion-color-primary);
+  font-weight: 600;
+}
+
+/* ===== Notes ===== */
+.item-notes {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+/* ===== Section Header ===== */
+.section-header {
+  padding: var(--spacing-md);
+  background: var(--bg-tertiary);
+  margin: var(--spacing-md) 0;
+  border-radius: 8px;
+  border-left: 4px solid var(--ion-color-primary);
+}
+
+.section-header h2 {
+  font-size: var(--font-lg);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ===== Statistics Grid ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: var(--spacing-md);
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.stat-value {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--ion-color-primary);
+}
+
+.stat-label {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+}

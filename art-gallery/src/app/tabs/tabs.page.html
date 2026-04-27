@@ -1,0 +1,94 @@
+<!--
+  Tabs Page
+  Main navigation container with top header navigation bar
+-->
+<ion-header class="ion-no-border">
+  <!-- Top Header Banner -->
+  <ion-toolbar class="header-toolbar">
+    <div class="header-content">
+      <div class="header-left">
+        <ion-icon name="cube" class="header-icon"></ion-icon>
+        <div class="header-text">
+          <ion-title class="header-title">Art Gallery Inventory</ion-title>
+          <span class="header-subtitle">Management System</span>
+        </div>
+      </div>
+    </div>
+  </ion-toolbar>
+  
+  <!-- Navigation Menu Bar -->
+  <ion-toolbar class="nav-toolbar">
+    <div class="nav-menu">
+      <button class="nav-item" [class.active]="currentTab === 'list'" (click)="navigate('list')">
+        <ion-icon name="list"></ion-icon>
+        <span>List</span>
+      </button>
+      <button class="nav-item" [class.active]="currentTab === 'add'" (click)="navigate('add')">
+        <ion-icon name="add-circle"></ion-icon>
+        <span>Add</span>
+      </button>
+      <button class="nav-item" [class.active]="currentTab === 'manage'" (click)="navigate('manage')">
+        <ion-icon name="create"></ion-icon>
+        <span>Manage</span>
+      </button>
+      <button class="nav-item" [class.active]="currentTab === 'privacy'" (click)="navigate('privacy')">
+        <ion-icon name="shield-checkmark"></ion-icon>
+        <span>Privacy</span>
+      </button>
+      <button class="nav-item help-btn" (click)="toggleHelp()">
+        <ion-icon name="help-circle"></ion-icon>
+        <span>Help</span>
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Page Content using ion-nav -->
+<ion-content>
+  <ion-nav #nav [root]="pages['list']" [swipeBackEnabled]="false"></ion-nav>
+</ion-content>
+
+<!-- Help Modal -->
+<div class="help-modal-overlay" [ngClass]="{'show': showHelpModal}" (click)="toggleHelp()">
+  <div class="help-modal" (click)="$event.stopPropagation()">
+    <div class="help-modal-header">
+      <ion-icon name="help-circle" class="help-icon"></ion-icon>
+      <h2>Help & Guide</h2>
+      <button class="close-btn" (click)="toggleHelp()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </div>
+    <div class="help-modal-content">
+      <div class="help-section">
+        <h3><ion-icon name="list"></ion-icon> List Page</h3>
+        <p>View all inventory items in a list format. Use the search bar to find specific items by name. Pull down to refresh the list.</p>
+      </div>
+      <div class="help-section">
+        <h3><ion-icon name="add-circle"></ion-icon> Add Page</h3>
+        <p>Add new items to your inventory. Fill in all required fields (marked with *) and click "Add Item" to save.</p>
+        <ul>
+          <li><strong>Item Name:</strong> Must be unique</li>
+          <li><strong>Category:</strong> Electronics, Furniture, Clothing, Tools, Miscellaneous</li>
+          <li><strong>Stock Status:</strong> In stock, Low stock, Out of stock</li>
+        </ul>
+      </div>
+      <div class="help-section">
+        <h3><ion-icon name="create"></ion-icon> Manage Page</h3>
+        <p>Update or delete existing items. Search for an item first, then modify its details or delete it.</p>
+        <ul>
+          <li><strong>Update:</strong> Change any field and save</li>
+          <li><strong>Delete:</strong> Requires confirmation</li>
+        </ul>
+      </div>
+      <div class="help-section">
+        <h3><ion-icon name="star"></ion-icon> Featured Items</h3>
+        <p>Mark items as "Featured" to highlight them. Featured items appear on the Add page for quick access.</p>
+      </div>
+      <div class="help-section">
+        <h3><ion-icon name="information-circle"></ion-icon> About</h3>
+        <p>This app connects to a remote API at Southern Cross University. Your data is stored securely on SCU servers.</p>
+        <p class="course-info"><strong>Course:</strong> PROG2005 Programming Mobile Systems<br><strong>Assessment:</strong> A3 - Ionic Mobile Inventory Management</p>
+      </div>
+    </div>
+  </div>
+</div>

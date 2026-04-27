@@ -1,0 +1,107 @@
+<!-- Inventory List Page -->
+<div class="scroll-container">
+  <!-- Search Section -->
+  <div class="search-container">
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      placeholder="Search by item name..."
+      [debounce]="500"
+      (ionClear)="clearSearch()"
+      (ionInput)="applyFilter()"
+      show-clear-button="always">
+    </ion-searchbar>
+    <ion-button expand="block" (click)="searchItem()" [disabled]="!searchTerm.trim() || isSearching" color="primary">
+      <ion-icon slot="start" name="search"></ion-icon>
+      Search
+    </ion-button>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading-container">
+    <ion-spinner name="crescent" color="primary"></ion-spinner>
+    <p>Loading inventory...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="errorMessage && !isLoading" class="error-container">
+    <ion-icon name="alert-circle-outline" size="large" color="danger"></ion-icon>
+    <p>{{ errorMessage }}</p>
+    <ion-button (click)="loadItems()" color="primary">Retry</ion-button>
+  </div>
+
+  <!-- Items List -->
+  <ng-container *ngIf="!isLoading && !errorMessage">
+    <!-- Results Count -->
+    <div class="results-header">
+      <span class="item-count">{{ filteredItems.length }} item(s)</span>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="filteredItems.length === 0" class="empty-state">
+      <ion-icon name="cube-outline" size="large" color="medium"></ion-icon>
+      <h3>No Items Found</h3>
+      <p>Your inventory is empty or no items match your search.</p>
+    </div>
+
+    <!-- Item Cards -->
+    <ion-card *ngFor="let item of filteredItems" class="custom-card" mode="ios">
+      <div class="card-header">
+        <div class="header-left">
+          <span class="item-name">{{ item.item_name }}</span>
+          <span *ngIf="item.featured_item === 1" class="item-badge badge-featured">
+            <ion-icon name="star"></ion-icon> Featured
+          </span>
+        </div>
+        <span class="item-badge" [ngClass]="getCategoryBadgeClass(item.category)">
+          {{ item.category }}
+        </span>
+      </div>
+
+      <ion-card-content>
+        <div class="item-details">
+          <div class="detail-row">
+            <span class="detail-label">Item ID:</span>
+            <span class="detail-value">{{ item.item_id }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Quantity:</span>
+            <span class="detail-value">{{ item.quantity }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Price:</span>
+            <span class="detail-value price">{{ formatPrice(item.price) }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Supplier:</span>
+            <span class="detail-value">{{ item.supplier_name }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Status:</span>
+            <span class="item-badge" [ngClass]="getStatusBadgeClass(item.stock_status)">
+              {{ item.stock_status }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Special Note -->
+        <div *ngIf="item.special_note" class="item-notes">
+          <strong>Notes:</strong> {{ item.special_note }}
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!-- Refresh Button -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="loadItems()" color="primary" size="small">
+      <ion-icon name="refresh"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Help Button -->
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="showHelp()" color="secondary" size="small">
+      <ion-icon name="help-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>

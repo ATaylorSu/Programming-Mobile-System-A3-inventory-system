@@ -1,0 +1,394 @@
+/**
+ * Edit Delete Page Styles
+ * Student: JiemingLiu
+ * Course: PROG2005 Programming Mobile Systems
+ * Assessment: A3 Part1 - Phase 6 (Style Optimization)
+ * Description: Optimized styles for edit and delete operations page
+ */
+
+@import './variables';
+
+/* Page Container */
+.edit-delete-page {
+  --background: var(--color-background);
+}
+
+/* Header */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+
+  @media (min-width: 768px) {
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  &-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  &-actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+}
+
+/* Segmented Control */
+.segment-container {
+  padding: var(--space-md);
+
+  @media (min-width: 768px) {
+    padding: var(--space-lg) var(--space-xl);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  ion-segment {
+    --background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xs);
+    box-shadow: var(--shadow-sm);
+  }
+
+  ion-segment-button {
+    --border-radius: var(--radius-lg);
+    --padding-top: var(--space-md);
+    --padding-bottom: var(--space-md);
+    font-weight: var(--font-weight-medium);
+    text-transform: none;
+    min-height: 48px;
+
+    &.segment-selected {
+      --background: var(--gradient-primary);
+      --color: var(--color-text-inverse);
+      --indicator-color: transparent;
+    }
+  }
+}
+
+/* Content Section */
+.content-section {
+  padding: var(--space-md);
+
+  @media (min-width: 768px) {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
+
+/* Item List Card */
+.item-list-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  &-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  &-count {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+  }
+}
+
+/* Edit Item */
+.edit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background var(--transition-fast);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--color-background);
+  }
+
+  @media (min-width: 768px) {
+    padding: var(--space-lg) var(--space-xl);
+  }
+
+  &-image {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    background: var(--color-background);
+
+    @media (min-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &-name {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-xs) 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  &-category {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 2px var(--space-sm);
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+  }
+
+  &-actions {
+    display: flex;
+    gap: var(--space-sm);
+  }
+}
+
+/* Edit Form Modal */
+.edit-form-modal {
+  --background: var(--color-background);
+
+  ion-header {
+    ion-toolbar {
+      --background: var(--color-surface);
+      --border-color: var(--color-border-light);
+    }
+
+    ion-title {
+      font-family: var(--font-family-heading);
+      font-weight: var(--font-weight-semibold);
+    }
+  }
+
+  ion-content {
+    --background: var(--color-background);
+  }
+
+  .modal-content {
+    padding: var(--space-lg);
+
+    @media (min-width: 768px) {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: var(--space-xl);
+    }
+  }
+
+  .form-group {
+    margin-bottom: var(--space-lg);
+
+    label {
+      display: block;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+  }
+}
+
+/* Delete Confirmation Modal */
+.delete-confirm-modal {
+  --background: var(--color-surface);
+  --border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+
+  ion-header ion-toolbar {
+    --background: transparent;
+    --border-color: transparent;
+  }
+
+  .modal-content {
+    padding: var(--space-xl);
+    text-align: center;
+  }
+
+  &-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--color-danger);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  &-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  &-message {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-xl) 0;
+  }
+
+  &-item {
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  &-item-name {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  &-item-category {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin: var(--space-xs) 0 0 0;
+  }
+
+  &-actions {
+    display: flex;
+    gap: var(--space-md);
+
+    ion-button {
+      flex: 1;
+    }
+  }
+}
+
+/* Action Buttons */
+.action-btn {
+  --padding-start: var(--space-md);
+  --padding-end: var(--space-md);
+  height: 40px;
+
+  @media (min-width: 768px) {
+    --padding-start: var(--space-lg);
+    --padding-end: var(--space-lg);
+    height: 44px;
+  }
+
+  &.btn-edit {
+    --color: var(--color-primary);
+  }
+
+  &.btn-delete {
+    --color: var(--color-danger);
+  }
+}
+
+/* Swipe Actions */
+.swipe-actions {
+  display: flex;
+  height: 100%;
+
+  &-edit,
+  &-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    color: white;
+    cursor: pointer;
+  }
+
+  &-edit {
+    background: var(--color-primary);
+  }
+
+  &-delete {
+    background: var(--color-danger);
+  }
+}
+
+/* Empty State */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--space-lg);
+  text-align: center;
+
+  &-icon {
+    font-size: 64px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    opacity: 0.5;
+  }
+
+  &-title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  &-message {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    max-width: 280px;
+    margin: 0;
+  }
+}
+
+/* Toast/Snackbar */
+.success-toast {
+  --background: var(--color-success);
+  --color: white;
+  --border-radius: var(--radius-lg);
+  --box-shadow: var(--shadow-lg);
+}
+
+.error-toast {
+  --background: var(--color-danger);
+  --color: white;
+  --border-radius: var(--radius-lg);
+  --box-shadow: var(--shadow-lg);
+}

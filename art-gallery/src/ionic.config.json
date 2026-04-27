@@ -1,0 +1,14 @@
+{
+  "name": "art-gallery",
+  "integrations": {},
+  "type": "angular",
+  "id": "com.scu.artgallery.inventory",
+  "appId": "com.scu.artgallery.inventory",
+  "appName": "Art Gallery Inventory",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "cordova": {},
+  "standalone": true
+}
