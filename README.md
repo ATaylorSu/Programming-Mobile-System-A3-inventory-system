@@ -1,99 +1,93 @@
-# Inventory Management System - A3 Part1 Phase 3c
+# Inventory Management System - A3 Part1
 
-## Team Information
-- **Team Project**
-- **Course**: PROG2005 Programming Mobile Systems
-- **Assessment**: A3 Part1 Phase 3c
-- **Student**: BoLi
-
-/**
- * Art Gallery - Ionic Mobile Inventory Management System
- *
+ /**
+ * Inventory Management System
+ * Attention, please! --The project folder is named inventory system. If you want to try running the project, just focus on this folder.
  * ============================================================================
  *
  * Project Overview
  * ----------------
- * This is a cross-platform mobile application built with Ionic Framework that
- * allows users to manage an inventory database through RESTful API interactions.
+ * This is a cross platform mobile application built using Ionic Framework
+ * Allow users to manage inventory databases through RESTful API interactions.
  *
- * The application extends the Angular web application from A2, providing a
- * mobile-friendly interface with native-like features.
+ * This application extends A2's Angular web application and provides a
+ * A mobile friendly interface with native functionality.
  *
  * ============================================================================
- *
- * Features
+ * 
+ * Characteristics
  * --------
- * 1. List Page (Tab 1)
- *    - View all inventory items
- *    - Pull-to-refresh functionality
- *    - Featured item indicators
+ * 1. List page (tab 1)
+ * -View all inventory items
+ * -Pull to refresh function
+ * -Featured product indicators
  *
  * 2. Add Page (Tab 2)
- *    - Add new inventory items
- *    - Form validation
- *    - Featured Items section
+ *  -Add new inventory items
+ * -Form validation
+ * -Featured products section
  *
- * 3. Manage Page (Tab 3)
- *    - Update existing items
- *    - Delete items (with confirmation)
- *    - Protected items (Laptop cannot be deleted)
+ * 3. Management page (tab 3)
+ * -Update existing projects
+ * -Delete project (after confirmation)
+ * -Protected items (laptops cannot be deleted)
  *
- * 4. Privacy Page (Tab 4)
- *    - Data storage information
- *    - Security practices
- *    - API documentation
+ * 4. Privacy page (tab 4)
+ * -Data storage information
+ * -Safety Practice
+ * -API file
  *
  * ============================================================================
  *
  * Data Fields
  * -----------
- * - Item_ID (Auto-incrementing, unique)
- * - Item_Name (Required, unique)
- * - Category (Electronics, Furniture, Clothing, Tools, Miscellaneous)
- * - Quantity (Required, integer)
- * - Price (Required, integer)
- * - Supplier_Name (Required)
- * - Stock_Status (In Stock, Low Stock, Out of Stock)
- * - Featured_Item (0 or 1, default: 0)
- * - Special_Note (Optional)
+ * -Project ID (auto increment, unique)
+ * -Project Name (required, unique)
+ * -Category (electronic products, furniture, clothing, tools, miscellaneous)
+ * -Quantity (required, integer)
+ * -Price (required, integer)
+ * -Supplier Name (required)
+ * -Inventory status (in stock, low stock, out of stock)
+ * -Featured_Item (0 or 1, default value: 0)
+ * -Special instructions (optional)
  *
  * ============================================================================
  *
- * API Endpoints
+ * API endpoint
  * -------------
- * Base URL: https://prog2005.it.scu.edu.au/ArtGalley
+ * Basic URL: https://prog2005.it.scu.edu.au/ArtGalley
  *
- * GET    /                     - Get all items
- * GET    /{name}               - Get item by name
- * POST   /                     - Create new item
- * PUT    /{name}               - Update existing item
- * DELETE /{name}               - Delete item
+ * GET/- Get all projects
+ * GET/ {name}- Retrieve projects by name
+ * POST/- Create New Project
+ * PUT/ {name}- Update existing projects
+ * DELETE/{name} - Delete Project
  *
  * Note: The "Laptop" item cannot be deleted
  *
  * ============================================================================
  *
- * Installation & Running
+ * Installation and operation
  * ---------------------
  *
  * 1. Install dependencies:
- *    npm install
+ * Npm installation
  *
  * 2. Run in development mode:
- *    npm start
- *    or
- *    ionic serve
+ * Npm startup
+ * Or
+ * Ionic serve
  *
- * 3. Build for production:
- *    npm run build
+ * 3. Production and construction:
+ * Npm Run Build
  *
- * 4. Add platforms for mobile:
- *    ionic cordova platform add android
- *    ionic cordova platform add ios
+ * 4. Add a mobile platform:
+ * Adding Android to Ionic Cordova platform
+ * Adding iOS to Ionic Cordova platform
  *
- * 5. Run on device/emulator:
- *    ionic cordova run android
- *    ionic cordova run ios
+ * 5. Run on the device/simulator:
+ * Ionic Cordova running on Android
+ * Ionic Cordova Run iOS
  *
  * ============================================================================
  *
