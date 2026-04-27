@@ -3,8 +3,6 @@
 /**
 * Inventory Management System - A3 Part1
 * 
-* Attention, please! --The project folder is named "Inventory Managemant System". 
-* If you want to try running the project, just focus on this folder.
 * ============================================================================
 * 
 * Project Overview
